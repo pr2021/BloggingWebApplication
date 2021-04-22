@@ -23,14 +23,25 @@
   border: none;
   cursor: pointer;
   opacity: 0.8;
-  top: 23px;
-  width: 300px;
+  top: 5px;
+  width: 210px;
 }
 
 /* The popup form - hidden by default */
 .form-popup {
   display: none;
   position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  font: solid #f1f1f1;
+}
+
+/* Only for Update Reservation */
+.form-popup2 {
+  display: none;
+  position: static;
   bottom: 0;
   right: 15px;
   border: 3px solid #f1f1f1;
@@ -103,10 +114,12 @@
                  <!-- <li><a href="https://aws.amazon.com/what-is-cloud-computing/">About</a></li>
                   <li><a href="https://aws.amazon.com/solutions/">Services</a></li>
                   <li><a href="https://aws.amazon.com/contact-us/">Contact</a></li>-->
+                  <a href="/"><button type="button" class="open-button"> Home</button></a>
                   <a href="Menu"><button type="button" class="open-button"> Menu</button></a>
                   <button class="open-button" onclick="openForm()">Book Table</button>
                   <button class="open-button" onclick="openDeleteForm()">Cancel Reservation</button>
                   <button class="open-button" onclick="openUpdateForm()">Update Reservation</button>
+                  <a href="info.html"><button type="button" class="open-button"> About Us</button></a>
                   
                 </ul>
                 
@@ -144,8 +157,7 @@
             </form>
           
         
-        
-        
+      
         </div>
        </div>
        <div class="form-popup" id="deleteForm">
@@ -162,13 +174,10 @@
           <button type="submit"  id="delete-btn"  class="btn">Submit</button>
           <button type="button" class="btn cancel" onclick="closeDeleteForm()">Close</button>
         </form>
-      
-    
-    
     
     </div>
    </div>
-<div class="form-popup" id="updateForm">
+<div class="form-popup2" id="updateForm">
         <form class="form-container"  method="POST">
             <h1 style="color: white">Update Reservation</h1>
           
