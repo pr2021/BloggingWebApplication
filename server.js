@@ -1,5 +1,3 @@
-import mydata from './database.js';
-
 var express = require('express');
 const bodyParser = require('body-parser');
 var port = process.env.PORT || 3000;
