@@ -1,3 +1,5 @@
+import mydata from './database.js';
+
 var express = require('express');
 const bodyParser = require('body-parser');
 var port = process.env.PORT || 3000;
@@ -6,8 +8,6 @@ var path = require("path"),
 publicDir = path.join(__dirname,'public');
 
 app.use(express.static(publicDir));
-
-const { Pool} = require('pg');
 
 var nodemailer = require('nodemailer');
 
@@ -20,16 +20,6 @@ var transporter = nodemailer.createTransport({
     pass: 'fxgyqdapwqpozyog'
   }
 });
-
-
-
-const pool = new Pool({
-  user: 'postgres',
-  host: 'db.c1mxmtuo85dq.us-east-1.rds.amazonaws.com',
-  database: 'db',
-  password: 'admin123',
-  port: 5432,
-})
 
 const maxTables = 9;
 
