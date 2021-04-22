@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Yum Yum App</title>
+    <title>Restaraunt Web Application</title>
     <meta name="description" content="" />
     <link href="assets/css/styles.css" rel="stylesheet">
     <link href="assets/css/gradients.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <style>
 
@@ -16,14 +17,14 @@
 
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
-  background-color: #555;
+  background-color: #0000FF;
   color: white;
   padding: 16px 20px;
   border: none;
   cursor: pointer;
   opacity: 0.8;
   top: 23px;
-  width: 180px;
+  width: 300px;
 }
 
 /* The popup form - hidden by default */
@@ -83,7 +84,7 @@
 }
 
 
-body {
+.body {
   background-image: url('about.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed; 
@@ -91,7 +92,7 @@ body {
 }
 
 </style>
-<body class="" background="about.jpg">
+<body class="body">
    
 
     <div class="wrapper">
@@ -102,23 +103,22 @@ body {
                  <!-- <li><a href="https://aws.amazon.com/what-is-cloud-computing/">About</a></li>
                   <li><a href="https://aws.amazon.com/solutions/">Services</a></li>
                   <li><a href="https://aws.amazon.com/contact-us/">Contact</a></li>-->
+                  <a href="Menu"><button type="button" class="open-button"> Menu</button></a>
                   <button class="open-button" onclick="openForm()">Book Table</button>
                   <button class="open-button" onclick="openDeleteForm()">Cancel Reservation</button>
                   <button class="open-button" onclick="openUpdateForm()">Update Reservation</button>
-                  <a href="Menu"><button type="button" class="open-button"> Menu</button></a>
+                  
                 </ul>
                 
             </nav>
         </header>
 
-        <div class="message">
-            <div class="text">
-                <h1>Yum Yum!</h1>
-                <h2>Welcome to Yum Yum</h2>
-           
-           
+       <div class="jumbotron jumbotron-fluid">
+              <div class="container">
+                <h1 class="display-4">Dublin Restaraunt Hub</h1>
+                <p class="lead"><h2>Welcome to Insomania !! All happiness depends on a leisurely Food</h2></p>
             </div>
-        </div>
+       </div>
     
     <div class="form-popup" id="myForm">
             <form class="form-container"  method="POST">
@@ -194,14 +194,9 @@ body {
           <button type="button" class="btn cancel" onclick="closeUpdateForm()">Close</button>
         </form>
       
-    
-    
-    
     </div>
    </div>
-    <footer>
-        <p class="footer-contents">Designed and developed by Prajval</p>
-    </footer>
+  
 
     <script type="text/javascript">
      function openForm() {
@@ -262,7 +257,7 @@ body {
   // "Handshake", sends the new table reservation data and clears the form.
   $.post("/api/delete", newTable)
     .done(function(data) {
-      alert("Your request has been deleted.");
+      alert("Your request has been Cancelled.");
       console.log(data);
       document.getElementById("deleteForm").style.display = "none";
 

@@ -19,6 +19,10 @@ body {
   font-size: 1.8rem;
 }
 
+body {
+  background-image: url("about.jpg");
+}
+
 h1, h2, h3 {
   font-weight: normal;
 }

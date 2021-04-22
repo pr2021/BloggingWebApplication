@@ -3,12 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Yum Yum App</title>
+    <title>Restaraunt WebApplication</title>
     <meta name="description" content="" />
     <link href="assets/css/styles.css" rel="stylesheet">
     <link href="assets/css/gradients.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://www.w3schools.com/lib/w3.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
     
@@ -17,9 +18,14 @@
     body {font-family: Arial, Helvetica, sans-serif;}
 *{box-sizing: border-box;}
 
+/*body {
+  background-image: url('about.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}*/
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
-  background-color: #555;
+  background-color: #0000FF;
   color: white;
   padding: 16px 20px;
   border: none;
@@ -100,9 +106,13 @@
             </nav>
         </header>
 
-        
-                <h1>Yum Yum!</h1>
-                <h2>Welcome to Yum Yum</h2>
+<div class="jumbotron jumbotron-fluid">
+              <div class="container">
+                <h1 class="display-4">Insomania Menu</h1>
+                <p class="lead"><h2>Restaraunt Specials</h2></p>
+            </div>
+       </div>
+              
                 <div class="w3-row w3-center w3-border w3-border-dark-grey">
                   <a href="#pizza"><div class="w3-third w3-padding-large w3-red">Pizza</div></a>
                   <a href="#pasta"><div class="w3-third w3-padding-large w3-hover-red">Pasta</div></a>
@@ -155,13 +165,6 @@
                   <p class="w3-text-grey">Grilled ciabatta, garlic butter, onions</p>
                   </div>
           
-       
-    
-  
-    <footer>
-        <p class="footer-contents">Designed and developed by Prajval</p>
-    </footer>
-
     <script type="text/javascript">
      function openForm() {
         document.getElementById("myForm").style.display = "block";

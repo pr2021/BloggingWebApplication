@@ -1,12 +1,13 @@
 var express = require('express');
 const bodyParser = require('body-parser');
 var port = process.env.PORT || 3000;
-
-
 var app = express();
-const { Pool} = require('pg');
-var path = require("path");
+var path = require("path"),
+publicDir = path.join(__dirname,'public');
 
+app.use(express.static(publicDir));
+
+const { Pool} = require('pg');
 
 var nodemailer = require('nodemailer');
 
@@ -24,10 +25,10 @@ var transporter = nodemailer.createTransport({
 
 const pool = new Pool({
   user: 'postgres',
-  host: 'database-1.c1mxmtuo85dq.us-east-1.rds.amazonaws.com',
-  database: 'postgres',
-  password: 'Welcome1234',
-  port: 5433,
+  host: 'db.c1mxmtuo85dq.us-east-1.rds.amazonaws.com',
+  database: 'db',
+  password: 'admin123',
+  port: 5432,
 })
 
 const maxTables = 9;
@@ -78,7 +79,7 @@ if(availableTables < maxTables){
     from: 'prajval.narasimha@gmail.com',
     to: JSON.stringify(req.body.Email),
     subject: 'Table Booked',
-    text: 'Table has been booked for ' + req.body.Date + 'at' + req.body.Time
+    text: 'Table has been booked on  ' + req.body.Date + '  at  ' + req.body.Time
   };
   
   transporter.sendMail(mailOptions, function(error, info){
@@ -106,7 +107,7 @@ app.post("/api/delete", function(req,res){
     from: 'prajval.narasimha@gmail.com',
     to: JSON.stringify(req.body.Email),
     subject: 'Table Cancelled',
-    text: 'Table ooked for ' + req.body.Date + 'has been cancelled.'
+    text: 'Table Booked for '  + req.body.Date + ' has been cancelled.'
   };
   
   transporter.sendMail(mailOptions, function(error, info){
@@ -145,7 +146,7 @@ app.post("/api/delete", function(req,res){
     from: 'prajval.narasimha@gmail.com',
     to: JSON.stringify(req.body.Email),
     subject: 'Table Updated',
-    text: 'Table has been updated for ' + req.body.newdate + 'at' + req.body.Time
+    text: '  Table has been updated for ' + req.body.newdate +  ' at '  + req.body.Time
   };
   
   transporter.sendMail(mailOptions, function(error, info){
